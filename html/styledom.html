@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #specil{
+        color: blue;
+    }
+    </style>
+</head>
+<body>
+    <div id="specil">
+        this is Division one
+    </div>
+    <script>
+        let x=document.getElementById('specil')
+        x.style.color="pink"
+        x.style.border="2px solid black"
+        console.log(x.style)//Edi oka element ki anni Styles vuntayo thilsukovadani
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #specil{
+        color:white;
+    }
+    .one{
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+    <div id="specil">
+        this is Division one
+    </div>
+    <script>
+        let x=document.getElementById('specil')
+       x.setAttribute('class','one')
+       console.log(x.getAttribute('class'))
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="no imaeg" id="img1">
+    <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="Smiley face" id="img2">
+</body>
+<script> //set attribute and getattribute
+    let x=document.getElementById("img1")
+    x.style.width="200px"
+    x.style.height="200px"
+    console.log(x.getAttribute('src'))
+    x.setAttribute('src','img2')//here we are replaceing img1 place lo img2 ni
+</script>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #special{
+            color:pink;
+        }
+        .one{
+       background-color: blue;
+        }
+        .two{
+            border: 5px solid green;
+        }
+        .three{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+ <div id="special" class="one">
+    This is a paragraph in My page
+ </div>
+</body>
+<script> //set attribute and getattribute
+    const x=document.getElementById('special')
+    //x.setAttribute('class','two')//ekkada manam pina style lo unna two ni class one olace lo add chistunam
+    x.classList.add('two') //ekkada manm already unna class ni emi chiyadam lidu avi alani vunchi kottadi add chistunam
+    x.classList.add('three') //same pilaga malli inko  class add chistunam
+    x.classList.remove('one') //edi class ni remove chiyadaniki
+</script>                        
+</html> -->

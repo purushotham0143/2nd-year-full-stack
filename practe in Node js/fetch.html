@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="uname" id="uname" placeholder="enter name">
+    <input type="text" name="add" id="add" placeholder="enter Id">
+    <button id="btn">Submit</button>
+    <script>
+        let uname=document.getElementById('btn').addEventListener('click',async()=>{
+            let uname=document.getElementById('uname').value.trim();
+            let add=document.getElementById('add').value.trim();
+            let result=await fetch(`http://localhost:5050/getData?uname=${uname}&add=${add}`);
+            let data=await result.json();
+            console.log(data);
+        })
+    </script>
+</body>
+</html>

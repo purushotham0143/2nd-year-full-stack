@@ -1,0 +1,125 @@
+<!-- Dom Manuplation or Dynamic Dom Creation*********** -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="first">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div><br>
+    <div id="second">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <script>  //First 3 in Dynamic Dom
+        let n=document.createElement("p");
+        n.innerText="This is a paragraph"
+        console.log(n); //up to here is just creating a Element;
+        let parent=document.getElementById("second") //here we are appending in where we want it//
+        console.log(parent)
+        parent.appendChild(n);
+    </script>
+</body>
+</html> -->
+
+
+<!-- Oka element ni Mundu add chiyadam edi *******************-->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="first">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div><br>
+    <div id="second">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p id="last">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <script>  // Oka element ni Mundu add chiyadam edi
+        let n=document.createElement("h5");
+        n.innerText="edi second class ani div lo rendu p tags maddilo add avali"
+        let parent=document.getElementById("second")
+        let last=document.getElementById("last")
+        parent.insertBefore(n,last)
+    </script>
+</body>
+</html> -->
+
+
+<!-- Rmoveing a element in js**************** -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="first">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div><br>
+    <div id="second">
+        <p id="sim">Lorem ipsum dolor sit amet consectetur adipisicing99999.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <script> //Removeing a element in js
+       let p=document.getElementById("sim")
+       p.remove();
+    </script> -->
+
+ <!-- mundu di only oka element ni remove chiyadaniki ala kakunda Oka parent echi
+ dhantolo oka particular element ni remove chiyadam  -->
+
+ <!-- <script>//eppudu manam renduni thisukoni ravali *parent and child ni
+ let parent=document.getElementById("second")
+ let child=document.getElementById("sim")
+  parent.removeChild(sim)
+ </script>
+
+</body>
+</html> --> 
+
+
+<!-- How to replace An element  or tag ******* -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="first">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <div id="seccond">
+        <p id="pfirst">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <p id="last">Lorem ipsum dolor sit amet consectetur adipisicing.88888</p>
+    </div>
+    <script>
+        var n=document.createElement('h1')
+         n.innerText="This is to be added"
+      var child=document.getElementById("last")
+      child.replaceChildren(n)
+    </script>
+</body>
+</html> -->
+
+

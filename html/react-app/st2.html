@@ -1,0 +1,200 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 220px;
+            height: 150px;
+            border:1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+        }
+        input{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+             <input type="text" name="" id="name" placeholder="enter your name">
+             <br><br>
+             <input type="text" name="" id="section" placeholder="enter your section">
+             <br><br>
+             <button type="submit">submit</button>
+
+    </form>
+</body>
+<script>
+    const table = document.createElement('table');
+        table.setAttribute('id','table');
+        table.setAttribute('border','1');
+        document.body.append(table);
+
+        const thead = document.createElement('thead');
+        thead.setAttribute('id','thead');
+        document.querySelector('#table').append(thead);
+
+        const tbody = document.createElement('tbody');
+        tbody.setAttribute('id','tbody');
+        document.querySelector('#table').append(tbody);
+
+        let array = ['Name','Section']
+        for(let i=0;i<2;i++)
+        {
+            let th = document.createElement('th');
+            th.innerHTML = array[i];
+            document.querySelector('#thead').append(th);`
+        }
+    //table basic construction
+    let arr = [];
+     document.querySelector('#form').addEventListener('submit',doWork);
+     function doWork(e){
+        let obj = {};
+        e.preventDefault();
+        obj.name = e.target.name.value; //  ||  document.getElementById('name').value;
+        obj.section = e.target.section.value;
+        createBody(obj);
+        arr.push(obj);// [{name:rohan,section:d},{name:tamanna,section:e}]
+        localStorage.setItem('id',JSON.stringify(arr));
+     }
+
+     function createBody(obj){
+                let tr = document.createElement('tr');
+                document.querySelector('#tbody').append(tr);
+                
+                for(const key in obj) {
+                    // console.log(obj[key]);
+                    let td = document.createElement('td');
+                    td.innerHTML = obj[key];
+                    tr.append(td);
+                }
+        }
+        window.addEventListener('load',function (){
+              let x = JSON.parse(localStorage.getItem('id'));
+              x.forEach((ele)=>{
+                createBody(ele);
+              })````````
+        })
+</script>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .id{
+        border:solid black 1px;
+        width: 50px;
+    }
+</style>
+<body>
+    <table border="1">
+    <thead>
+            <th>Name</th>
+            <th>Email</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+    </table><br/>
+    <br/>
+    <br/>
+    <form id="form">
+   <label for="Name">Name:</label> <input type="text" name="name" id="Name"><br>
+   <label for="Email">Email:</label> <input type="text" name="Email" id="Email"><br>
+   <button type="submit">submit</button>
+    </form>
+</body>
+<script>
+    let arr=[];
+    let obj={};
+     document.querySelector('#form').addEventListener('submit',doWork);
+     function doWork(e){
+        e.preventDefault();
+       obj.name=document.getElementById("Name").value 
+      obj.Email=document.getElementById("Email").value
+      createobj(obj)
+      arr.push(obj);
+      localStorage.setItem('key',JSON.stringify(arr));
+     }
+     function createobj(obj){
+      let tr = document.createElement('tr');
+                document.querySelector('tbody').append(tr);
+      for(const key in obj) {
+                    // console.log(obj[key]);
+                    let td = document.createElement('td');
+                    td.innerHTML = obj[key];
+                    tr.append(td);
+                }
+     }
+     window.addEventListener('load',function (){
+              let x = JSON.parse(localStorage.getItem('key'));
+              x.forEach((ele)=>{
+                createobj(ele);
+              })
+        })
+</script>
+
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function product(){
+            var res = await fetch('https://dummyjson.com/products');
+            // console.log(res);
+            let data = await res.json();
+            // console.log(data.products)   
+            let array = data.products;
+            let store = array.filter((ele)=>ele.category == 'laptops')
+            let final = store.map((ele)=>ele.id)
+            console.log(final)  
+
+        }
+        product();
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     async function change(){
+     let data=await fetch('https://dummyjson.com/products');
+        let get= await data.json();
+        let res=get.products;
+        console.log(res);
+        let but=res.filter((item) =>item.category=='smartphones');
+        let store=but.map((item)=>item.id);
+        console.log(store)
+     }
+     change();
+    </script>
+</body>
+</html> -->

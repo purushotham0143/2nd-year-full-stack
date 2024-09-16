@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            width: 50%;
+            height: 70vh;
+            background-color: antiquewhite;
+            /*Here we can give in 2fr and 1fr like this also*/
+    /*Here if give 4 childs the it will form 4 coloums and 4 Rows in the Structure*/
+            grid-template-columns: 10% 10%;
+            /* Here we have annother repeate(3,10%) this also used to create the  Coloums or Rows     
+            /*Here we can give the manualy fix size or we can give like this also it will automitically divide it and it will take*/
+            grid-template-rows: 10% 10% 10% 50%;
+            grid-gap: 10px;   /*in this we can give the both row and coloum one time like this 10px 20px*/
+            /*row-gap: ;  this is used to show Row to row gap*/
+            /*coloum-gap: ;  this is used to show coloum to coloum gap*/
+
+        /*align-items: ;  this is used for only Parents and this will work for only Vertically */
+        /*justify-items: ;  this is used for only Parents and this will work for only HoriZently */
+        /*align-content: center;  This will work always Vertically*/
+        /*justify-content: ; This will work always   HoriZently */
+        /*By derfault this  two Are Strech in the grid*/
+
+        /*grid-template-areas: "small1 small2 small3"  
+                              "header Footer";*/
+        }    
+        .header{
+            grid-column: 1/5;
+            grid-row: 1/2;
+        }
+        .small1{
+        grid-column: 1/2;
+            grid-row: 2/3;
+        }
+       /* .small1{
+            align-self:; this will work only one child
+            justify-self:; this will work only one child
+        } */
+        .small2{
+         grid-column:2/3;
+            grid-row:2/3 ;
+        }
+        .small3{
+        grid-column:3/4;
+            grid-row:2/3;
+        }
+        .sidebar{
+            grid-column:4/5;
+        grid-row:2/5;
+        }
+        .main{
+        grid-column: 1/4;
+        grid-row: 3/5;
+        }
+        .Footer{
+        grid-column: 1/5;
+        }
+        .container >div:nth-child(odd){
+            background-color: orange;
+        }
+        .container >div:nth-child(even){
+            background-color: rgb(213, 28, 78);
+        }
+        .container >div{
+        font-size: auto;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- .child$*5      This Commmand is used to get the 5divs with class child-->
+    <div class="container">
+    <div class="header">Header</div>
+    <div class="small1">small box</div>
+    <div class="small2">Small box</div>
+    <div class="small3">Small box</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main content</div>
+    <div class="Footer">Footer</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- 
+<html>
+    <head>
+        <style>
+body{
+    background-color: #fff;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+}
+.container{
+    display: grid;
+    width: 80%;
+    height: 70vh;
+    margin-top: 50px;
+    grid-gap: 10px;
+    grid-template-rows: 10% 10%;
+    grid-template-columns: 10% 10% 10%;
+}
+.container >div{
+    font-size: auto;
+    color: black;
+    }
+.header{
+    padding-top: 10px;
+    text-align: center;
+    background-color: orange;
+    border-radius: 5px;
+    grid-column: 1/6;
+    
+}
+.search{
+    padding-top: 10px;
+    text-align: center;
+    background-color: green;
+    border-radius: 5px;
+    grid-column: 1/5;
+}
+.rightsidebar{
+    padding-top: 10px;
+    text-align: center;
+    background-color: pink;
+    border-radius: 5px;
+
+    grid-row:3/15;
+}
+.leftsidebar{
+    padding-top: 10px;
+    text-align: center;
+    background-color: skyblue;
+    border-radius: 5px;
+    grid-column:5/6 ;
+    grid-row:2/15;
+}
+.middlecolumn{
+    padding-top: 10px;
+    text-align: center;
+    background-color: blue;
+    border-radius: 5px;
+    grid-column:1/4;
+    grid-row:3/15 ;
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+       <div class="header">Header</div>
+       <div class="search">Search</div>
+       <div class="leftsidebar">Left Sidebar</div>
+       <div class="middlecolumn">Middle Column</div>
+       <div class="rightsidebar">Right Sidebar</div>
+        </div>
+    </body>
+</html> -->

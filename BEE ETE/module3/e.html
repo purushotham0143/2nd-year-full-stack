@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type=text] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 10%;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Search Page</h1>
+</div>
+
+    <form id="searchForm" action="/xyz">
+        <input type="text" placeholder="Search..." name="search" id="search">
+        <input type="submit" value="Search" id="btn">
+    </form>
+
+<div class="footer">
+    <div id="Resultdata"></div>
+</div>
+
+<script>
+document.getElementById('submit').addEventListener('click', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+    let value1 = document.getElementById('search').value.trim();
+    let result = await fetch(`http://localhost:1010/xyz?search=${value1}`);
+    let obj = await result.json();
+    console.log(obj);
+});
+</script>
+</body>
+</html>
+

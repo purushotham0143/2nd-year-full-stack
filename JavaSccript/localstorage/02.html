@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <label for="name">Enter your name:</label>  <input type="text" name="" id="name" placeholder="Enter your name"><br>
+  <label for="name">Enter your email:</label>  <input type="email" name="" id="email" placeholder="Enter your email"><br>
+  <button id="btn1">submit</button>
+  <!-- <h1 id="h1"></h1> -->
+
+  <script>
+    let array = [];
+    let obj = {};
+    document.querySelector('#btn1').addEventListener('click',localstorage);
+    function localstorage(e){
+    // console.log(e.target)
+ let var1 = document.querySelector('#name').value
+ let var2 = document.querySelector('#email').value
+obj.name = var1;
+obj.email = var2;
+//  console.log(var1);
+localStorage.setItem('key',JSON.stringify(obj)) //to set Items into local storage  we use set items  and we are storeing it in string method
+let x = JSON.parse(localStorage.getItem('key'));
+console.log(x);
+    }
+  </script>
+</body>
+</html>

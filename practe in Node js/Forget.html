@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login{
+            justify-content: center;
+            text-align: center;
+            background-color:chartreuse;
+            width: 200px;
+            height: 200px;
+           padding-top: 50px;
+           border: 1px chartreuse ;
+           border-radius: 7px;
+           margin: auto;
+        }
+        #password{
+            display: none;
+        } 
+        body{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Foget password</h1>
+    <div class="login">
+        <h2>Reset Password</h2>
+<input type="text" id="uname" name="uname" placeholder="Name"><br><br>
+<input type="text" id="password" name="password" placeholder="Set Password"><br><br>
+<input type="button" name="submit" id="submit" value="forget">
+<a href="login.html">login</a>
+<a href="sign.html">Sign</a>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click',async()=>{
+            let value1=document.getElementById('uname').value.trim();
+            let result =await fetch(`http://localhost:1010/forget?uname=${value1}`);
+           let data=await result.text();
+           console.log(data);
+           if(data){
+         let password= document.getElementById('password');
+         password.style.display='block';
+        document.getElementById('submit').addEventListener('click',async()=>{
+           let value3=document.getElementById('uname').value.trim();
+           let value4=document.getElementById('password').value.trim();
+           let result2 =await fetch(`http://localhost:1010/change?uname=${value3}&password=${value4}`);
+          let data2=await result2.text();
+          console.log(data2);
+        })
+           }
+        })
+
+    </script>
+</body>
+</html>

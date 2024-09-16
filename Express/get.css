@@ -1,0 +1,11 @@
+.form{
+    justify-content: center;
+    text-align: center;
+    background-color:chartreuse;
+    width: 200px;
+    height: 200px;
+    padding-top: 50px;
+    border: 1px chartreuse ;
+    border-radius: 7px;
+    margin: auto;
+}

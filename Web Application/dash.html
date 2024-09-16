@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+</head>
+<body>
+    <h1>This is a Dashboard page</h1>
+    <table border="1" style="border:2px solid black">
+        <thead>
+            <th>SNO</th> 
+            <th>Title</th>
+            <th>Images</th>
+            <th>Description</th>
+        </thead>
+      
+        <tbody></tbody>
+    </table>
+    <script>
+         fetch('/table').then(response=>{
+            return response.json();
+        }).then(data=>{
+            data.forEach(obj=>{
+                let tr=document.createElement('tr');
+                for(key in obj){
+                  let td=document.createElement('td');
+                  if (key === 'image') {
+                      let img = document.createElement('img');
+                      img.style.height='auto'
+                      img.style.width='100px'
+                      img.src = obj[key];
+                      td.appendChild(img);
+                  } else {
+                      td.innerHTML=obj[key];
+                  }
+                  tr.append(td);
+                }
+              document.querySelector('tbody').append(tr);
+            })
+        });
+    </script>
+</body>
+</html>

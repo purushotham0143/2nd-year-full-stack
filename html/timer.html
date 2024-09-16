@@ -1,0 +1,290 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(154, 199, 244);
+        }
+        .container{
+            display: block;
+            margin: auto;
+            height:470px;
+            width:260px;
+            /* border:2px solid black; */
+            border-radius: 5px;
+            background-color: rgba(44, 17, 8, 0.762);
+            
+        }
+        .display{
+            position: relative;
+            top: 5px;
+            border-radius: 2px;
+            width: 210px;
+            height: 210px;
+            border:10px solid grey;
+            background-color: #ffffff;
+            display: block;
+            margin: auto;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 15px;
+        }
+        .comment{
+            width: 200px;
+            height: 50px;
+            border:none;
+            border-bottom: 2px dotted white;
+            position: relative;
+            top: 20px;
+            margin: auto;
+            /* background-color: #ffffff; */
+            color:#ffff;
+
+        }
+        .time{
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            align-content: center;
+        }
+        #session{
+            /* /* width: 100px;
+            height: 40px; */
+            /* border:1px solid black; */
+            
+        }
+        .box{
+            /* border: 1px solid black; */
+            width: 100px;
+            text-align: center;
+            height: 90px;
+        }
+        .Time{
+            font-size: 17px;
+            position: relative;
+            top:10px;
+            color:#ffffff;
+        }
+        .changeTime{
+            position: relative;
+            top: -40px;
+        }
+        .btn{
+            position: relative;
+            top:-68px;
+            width: 29px;
+            background-color: rgb(48, 48, 48);
+            color:#ffff;
+            border-radius: 2px;
+            box-shadow: none;
+        }
+        .pauseReset{
+            display: flex;
+            justify-content: space-evenly;
+            border: none;
+            border-bottom:2px dotted rgb(255, 255, 255);
+           
+            /* width: 200px; */ 
+        }
+        .prBtn{
+            position: relative;
+            top:50px;
+            width: 65px;
+            height: 30px;
+            background-color: rgb(48, 48, 48);
+            color:#ffff;
+            border-radius:2px;
+
+        }
+        .hr{
+            position: relative;
+            top:px;
+        }
+        .display p{
+            /* text-align: center; */
+            position: relative;
+            top: 40px;
+            font-size: 30px;
+            letter-spacing: 0.1em;
+    
+        }
+        .c2{
+            font-size: 20px;
+            color: rgb(255, 119, 0)
+        }
+        .c1{
+            font-size: 20px;color:rgb(16, 191, 51)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="display"> <p id="min">00</p><p>:</p><p id="sec">00</p> </div>
+       <div class="comment" display="none"></div>
+       <div class="time">
+           <div id="session" class="box">
+               <p  class="Time">session time</p> <br>
+               <p class="changeTime c1">20 min</p> <br>
+               <button class="btn"  id="sm">-</button>
+               <button class="btn"  id="sp">+</button>
+           </div>
+           <div id="break" class="box">
+               <p class="Time">break time</p> <br>
+               <p class="changeTime c2" >5 min</p> <br>
+               <button class="btn" id="bm">-</button>
+               <button class="btn" id="bp">+</button>
+           </div>
+       </div>
+       <div class="pauseReset">
+           <button id="pauseBtn" name="true" class="prBtn" >Start</button>
+           <button id="resetBtn" class="prBtn" >Reset</button>
+       </div>
+     </div>
+   <script>
+   
+   var min = 0;
+    var sec = 59;
+        document.querySelector('#sp').addEventListener('click',doWork);
+        document.querySelector('#sm').addEventListener('click',doReverseWork);
+        document.querySelector('#bp').addEventListener('click',doWork);
+        document.querySelector('#bm').addEventListener('click',doReverseWork);
+        function doWork(e){
+            if((e.target.parentNode.id)=='session'){
+            document.querySelector('.display').style.color = "#00CCCC";
+            min+=20;
+            document.querySelector('#min').innerHTML =`${min}` ;
+            }
+            else{
+            document.querySelector('.display').style.color = "rgb(255, 119, 0)";
+            min+=5;
+            document.querySelector('#min').innerHTML =`${min}` ;
+            }
+        }
+        function doReverseWork(e){
+            if((e.target.parentNode.id)=='session'){
+            if(min>0){
+            document.querySelector('.display').style.color = "#00CCCC";
+            min-=20;
+            document.querySelector('#min').innerHTML =min;
+            }
+        }
+        else{
+            if(min>0){
+            document.querySelector('.display').style.color = "rgb(255, 119, 0)";
+            min-=5;
+            document.querySelector('#min').innerHTML =min;
+            }
+        }
+        }
+
+let indicator = 0;
+let startReferance;
+document.querySelector('#pauseBtn').addEventListener('click',()=>{
+    if(document.querySelector('#pauseBtn').innerHTML == 'Pause'){
+        clearInterval(againTimeStart);
+        clearInterval(startReferance);
+        document.querySelector('#pauseBtn').innerHTML = 'Start';
+        indicator++;
+    }
+    else{
+            if(min>0){
+ 
+                comment();    
+           document.querySelector('#pauseBtn').innerHTML = 'Pause';
+            document.querySelector('#sp').setAttribute('disabled','true');
+            document.querySelector('#sm').setAttribute('disabled','true');
+            document.querySelector('#bp').setAttribute('disabled','true');
+            document.querySelector('#bm').setAttribute('disabled','true');
+            if(indicator==0)
+            min--;
+    if(min>=0)
+    {
+    startReferance = setInterval(()=>{
+    document.querySelector('#min').innerHTML = min.toString().padStart(2,'0');
+    document.querySelector('#sec').innerHTML = sec.toString().padStart(2,'0');
+    sec--;
+    if(sec==0)
+    {
+      sec = 59;
+      min--;
+    }
+    if(min==0 && sec == 1){
+        stop();
+    }
+    },1000);
+    }
+}
+}
+})
+let againStartTimeReferance;
+function stop(){
+    document.querySelector('#sec').innerHTML = (sec-1).toString().padStart(2,'0');
+    clearInterval(startReferance);
+    document.querySelector('#min').innerHTML = min.toString().padStart(2,'0');
+    breakTimeIncrease();
+}
+let againTimeStart;
+function breakTimeIncrease(){
+    
+    if(document.querySelector('.display').style.color == "rgb(0, 204, 204)"){
+    document.querySelector('.display').style.color = "rgb(255, 119, 0)";
+    comment();
+    againTimeStart = setInterval(()=>{
+    document.querySelector('#sec').innerHTML = (sec).toString().padStart(2,'0');
+    sec++;
+    if(sec==60)
+    {
+        sec = 0;
+        min++;
+    }
+    document.querySelector('#min').innerHTML = min.toString().padStart(2,'0');
+    },1000)
+}
+}
+
+document.querySelector('#resetBtn').addEventListener('click',()=>{
+    min = 0;
+    sec = 0;
+    indicator = 0;
+    clearInterval(againTimeStart);
+    clearInterval(startReferance);
+    document.querySelector('#pauseBtn').innerHTML = 'Start';
+    document.querySelector('.comment').innerText = "";
+
+    document.querySelector('.display').style.color = "rgb(0, 0, 0)"
+    document.querySelector('#sec').innerHTML = (sec).toString().padStart(2,'0');
+    document.querySelector('#min').innerHTML = (min).toString().padStart(2,'0');
+    sec = 59;
+     buttonEnable();
+            // console.log(document.querySelector('#sp'));
+})
+
+function buttonEnable(){
+            document.querySelector('#sp').disabled = false;
+            document.querySelector('#sm').disabled = false;
+            document.querySelector('#bp').disabled = false;
+            document.querySelector('#bm').disabled = false;
+    document.querySelector('#pauseBtn').disabled = false;
+
+}
+function comment(){
+    if(document.querySelector('.display').style.color == "rgb(0, 204, 204)"){
+                     document.querySelector('.comment').innerText = "Season Started";
+                     document.querySelector('.comment').style = 'text-align:center;color:rgb(0, 204, 204);font-size:22px;'
+                }
+                else{
+                    document.querySelector('.comment').innerText = "Break!";
+                     document.querySelector('.comment').style = 'text-align:center;color:rgb(255, 119, 0);font-size:22px;'
+                }
+}
+
+   
+   </script>
+</body>
+</html> -->

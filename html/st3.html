@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .demo {
+        position: relative;
+        text-align: center;
+        align-items: center;
+        padding-top: 100px;
+        margin-top: 100px;
+        margin-left: 100px;
+        border: 2px solid black;
+        height: 500px;
+        width: 500px;
+    }
+</style>
+<body>
+    <div class="demo">
+        check: <input type="text" name="check" id="checkInput" placeholder="enter a name"><br/><br/>
+        <button id="check">check</button><br/>
+        <label for="text">Note:</label><input type="text" id="text" placeholder="enter a note"><br/><br/>
+        <button id="button">submit</button><br/><br/>
+        <ul id="ul"></ul>
+    </div>
+
+    <script>
+        let array = [];
+        
+        document.querySelector('#button').addEventListener('click', comeOne);
+
+        function comeOne() {
+            let var1 = document.getElementById('text').value;
+            array.push(var1);
+
+            let li = document.createElement('li');
+            li.innerHTML = var1;
+            document.getElementById('ul').appendChild(li);
+        }
+
+        document.querySelector('#check').addEventListener('click', checkList);
+
+        function checkList() {
+            let var2 = document.querySelector('#checkInput').value;
+            let indicator = 0;
+
+            array.forEach((ele, index) => {
+                if (ele === var2) {
+                    indicator++;
+                    let liArray = document.querySelectorAll('li');
+                    liArray.forEach((li) => {
+                        if (li.innerHTML === var2) {
+                            li.remove();
+                        }
+                    });
+                }
+            });
+
+            if (indicator === 0) {
+                let li = document.createElement('li');
+                li.innerHTML = var2;
+                document.getElementById('ul').appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(107, 109, 109);
+        }
+        button{
+            width: 60px;
+            height: 30px;
+            
+        }
+        .button{
+            position: absolute;
+            top:20px;
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            margin: auto;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        .container{
+            position: absolute;
+            top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header class="button">
+        <button id='plus'>+</button>
+        <button id='minus'>-</button>
+        <button id='addBorder'>Add border</button>
+        <button id='removeBorder'>Remove Border</button>
+        <input type="color" name="color" id="color" placeholder="Choose a color">
+        <label for="font">Entet Text-Family</label><select name="fontName" id="font" value="">
+            <option value="">Enter your font family</option>
+            <option value="fr">'Franklin</option>
+            <option value="cn">Courier</option>
+            <option value="gill">Gill</option>
+        </select>   
+        </header>
+    <div class="container">
+        <div class="content">
+            <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat asperiores unde, voluptates ea modi alias ad et consectetur dolorum nihil, explicabo sapiente aliquam odio iure saepe at excepturi minus praesentium est animi dicta! Dolore iste itaque, eum molestias harum, ipsa soluta repudiandae perspiciatis tenetur pariatur cumque eos sapiente praesentium debitis?
+        </p>
+        </div>
+       
+    </div>
+</body>
+<script>
+    let fontSize = 20;
+     document.querySelector('#plus').addEventListener('click',()=>{
+            fontSize+=5;
+            document.querySelector('.content p').style = `font-size:${fontSize}px;`;
+            console.log(fontSize)
+     })
+     document.querySelector('#minus').addEventListener('click',()=>{
+            fontSize-=5;
+            document.querySelector('.content p').style = `font-size:${fontSize}px;`;
+            console.log(fontSize)
+     })
+     document.querySelector('#addBorder').addEventListener('click',()=>{
+        document.querySelector('.content p').style = `border:2px solid red;`
+     })
+     document.querySelector('#removeBorder').addEventListener('click',()=>{
+        document.querySelector('.content p').style = `border:none;`
+     })
+     document.querySelector('#font').addEventListener('change',(e)=>{
+          let var1 = e.target.value
+        if(var1 == 'fr')
+        {
+            document.querySelector('.content p').style.fontFamily = 'Franklin Gothic Medium', 'Arial Narrow';
+        }
+        else if(var1 == 'cn'){
+            document.querySelector('.content p').style.fontFamily = 'Courier New';
+        }
+        else if(var1 == 'gill'){
+            document.querySelector('.content p').style.fontFamily ="'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
+        }
+     })
+     document.querySelector('#color').addEventListener('input',(e)=>{
+        // console.log(e.target.value)
+        document.querySelector('.content p').style.color = e.target.value.toString();
+     })
+</script>
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Elements</title>
+</head>
+<body>
+    <div id="input">
+        <label>Input number</label>
+        <input type="text" id="txtBox"/>
+        <button id="btnGenerate">Generate</button>
+    </div>
+    <div id="numbers"></div>
+
+    <script>
+    document.getElementById('btnGenerate').addEventListener('click',generateElement)
+        function generateElement() {
+            // Get the input value
+            var  numElements = parseInt(document.getElementById('txtBox').value);
+
+            // Get the numbers div
+            var numbersDiv = document.getElementById('numbers');
+            // Generate and append span elements
+            for (var i = 1; i <= numElements; i++) {
+                var span = document.createElement('span');
+                span.innerText = i;
+
+                // Set background color based on odd or even
+                if (i % 2 === 0) {
+                    span.style.backgroundColor = 'red';
+                } else {
+                    span.style.backgroundColor = 'green';
+                }
+
+                // Append span to the numbers div
+                numbersDiv.appendChild(span);
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Element</title>
+</head>
+<body>
+    <div>
+        <h2 id="arrayOutput"></h2>
+    </div>
+    <div id="inputArea">
+        Input element and button will be appended here dynamically 
+    </div>
+    <input id="elementTxt">
+    <button id="btnDelete" onclick="deleteArray()">Delete Element</button>
+
+    <script>
+        // Sample array for demonstration
+        var dataArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        // Display initial array in the H2 element
+        document.getElementById('arrayOutput').innerText = 'Array: ' + dataArray.join(', ');
+
+        // Function to delete occurrences of the entered element
+        function deleteArray() {
+            // Get the element value from the input
+            var elementToDelete = document.getElementById('elementTxt').value;
+
+            // Convert the element value to a number (assuming you are working with numbers)
+            var elementToDeleteNumber = parseInt(elementToDelete);
+
+            // Filter out occurrences of the elementToDelete from the array
+            dataArray = dataArray.filter(function (element) {
+                return element !== elementToDeleteNumber;
+            });
+
+            // Update the H2 element with the updated array
+            document.getElementById('arrayOutput').innerText = 'Array: ' + dataArray.join(', ');
+        }
+
+        // Dynamically create input element and button and append to the inputArea div
+        var inputAreaDiv = document.getElementById('inputArea');
+
+        var elementInput = document.createElement('input');
+        elementInput.id = 'elementTxt';
+        inputAreaDiv.appendChild(elementInput);
+
+        var deleteButton = document.createElement('button');
+        deleteButton.id = 'btnDelete';
+        deleteButton.innerText = 'Delete Element';
+        deleteButton.onclick = deleteArray;
+        inputAreaDiv.appendChild(deleteButton);
+    </script>
+</body>
+</html> -->

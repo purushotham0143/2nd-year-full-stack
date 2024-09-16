@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Submission</title>
+</head>
+<body>
+    <form id="dataForm">
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <input type="text" id="pass" name="pass" placeholder="Enter your password">
+        <button  id="button">Submit</button> 
+    </form>
+
+    <script>
+        document.getElementById('button').addEventListener('click', async () => {
+            const name = document.getElementById('name').value.trim();
+            const pass = document.getElementById('pass').value.trim(); 
+            const obj = { name, pass };
+
+            const response = await fetch('http://localhost:9090/Datapost', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }, // Changed from text/html
+                body: JSON.stringify(obj) // Make sure this is correctly serialized
+            });
+
+            const result = await response.json(); // Parsing the response
+            console.log(result);
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Submission</title>
+</head>
+<body>
+    <form id="dataForm">
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <input type="text" id="pass" name="pass" placeholder="Enter your password">
+        <button type="button" id="button">Submit</button> <!-- Use type 'button' to prevent form submission -->
+    </form>
+
+    <script>
+        document.getElementById('button').addEventListener('click', async () => {
+            const name = document.getElementById('name').value.trim();
+            const pass = document.getElementById('pass').value.trim(); // You probably want this to be .value.trim() instead of raw .value.
+            const obj = { name, pass };
+
+            // Properly fetch data with correct Content-Type
+            const response = await fetch('http://localhost:9090/Datapost', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }, // Changed from text/html
+                body: JSON.stringify(obj) // Make sure this is correctly serialized
+            });
+
+            const result = await response.json(); // Parsing the response
+            console.log(result);
+        });
+    </script>
+</body>
+</html>

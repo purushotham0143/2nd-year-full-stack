@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter Name" id="name" name="name"><br>
+        <input type="text" type="password" placeholder="enter your password" id="pass" name="pass">;
+        <button id="submit">Submit</button>
+    </form>
+</body>
+<script>
+    document.querySelector('#submit').addEventListener('click',async()=>{
+        let data1=document.getElementById('name').value.trim();
+        let data2=document.getElementById('pass').value.trim();
+        let result=await fetch(`http://localhost:1010/getData?name=${data1}&&pass=${data2}`);
+        let final=result.json();
+        console.log(final);
+    })
+</script>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="/getdata">
+    <input type="text" placeholder="Emter the name" name="name" id="name">
+    <input type="password" placeholder="Emter the pass" name="pss" id="pss">
+     <button id="sub">Submit</button>
+   </form>
+   <script>
+    document.getElementById('sub').addEventListener('click',async(e)=>{
+        e.preventDefault();
+        let val1=document.getElementById('name').value.trim();
+        let val2=document.getElementById('pss').value.trim();
+      let result=await fetch(`http://localhost:4040/getdata?name=${val1}&pss=${val2}`);
+      let final=await result.json();
+      console.log(final);
+    })
+   </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input type="text" placeholder="Emter the name" name="uname" id="uname">
+    <input type="password" placeholder="Emter the pass" name="pass" id="pass">
+     <button id="sub">Submit</button>
+   
+   <script>
+    document.getElementById('sub').addEventListener('click',async()=>{
+        let obj={uname:document.getElementById('uname').value.trim(),pass:document.getElementById('pass').value.trim()}
+      let result=await fetch(`http://localhost:4040/getdata`,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain'},
+      body:JSON.stringify(obj),
+      })
+    let final=await result.json();
+    console.log(final);
+    })
+   </script>
+</body>
+</html>

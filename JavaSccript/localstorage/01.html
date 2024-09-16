@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async_table3</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>maidenName</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>username</th>
+            <th>password</th>
+            <th>birthDate</th>
+            <th>image</th>
+            <th>bloodGroup</th>
+            <th>height</th>
+            <th>weight</th>
+            <th>eyeColor</th>
+            <th>company</th>
+            <th>domain</th>
+            <th>ip</th>
+            <th>hair</th>
+            <th>macAddress</th>
+            <th>university</th>
+            <th>bank</th>
+            <th>Address</th>
+            <th>ein</th>
+            <th>ssn</th>
+            <th>userAgent</th>
+            
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body>
+<script>
+    async function getdata(){
+
+var response = await fetch('https://dummyjson.com/users');
+var data = await response.json();
+
+// console.log(data);
+
+var data1 = data.users;
+console.log(data1);
+
+myfunction(data1);
+}
+function myfunction(data1){
+data1.forEach(value => {
+    var tr=document.createElement("tr");
+    for(var key in value){
+        var td=document.createElement("td");
+        td.innerText=value[key];
+
+        tr.appendChild(td);
+        // console.log(value[key]);
+    }
+    document.querySelector('table tbody').append(tr);
+});
+}
+getdata();
+</script>
+</html> -->

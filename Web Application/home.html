@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+</head>
+<body>
+    <h1>Welcome to Web Application Home</h1>
+   <div id="data"></div>
+    <script>
+         fetch('/website').then(response=>{
+            return response.json();
+        }).then(data=>{
+            let divdata=document.getElementById('data');
+            data.forEach(obj=>{
+                let div=document.createElement('div');
+                div.style.border='1px solid gray';
+                div.style.height='auto';
+                div.style.width='300px';
+                div.style.marginTop='10px'
+                div.style.padding='10px';
+                div.style.display='';
+                for(key in obj){
+                  if (key === 'image') {
+                      let img = document.createElement('img');
+                      img.style.height='auto'
+                      img.style.width='100px'
+                      img.src = obj[key];
+                      div.appendChild(img);
+                  } else {
+                  let p=document.createElement('p');
+                      p.innerHTML=`${key}:${obj[key]}`;
+                      div.appendChild(p);
+                  }
+                }
+                div.addEventListener('click',()=>{
+                    divdata.querySelectorAll('div').forEach((ele)=>{
+                        ele.style.display='none';
+                    })
+                    div.style.display='block';
+                })
+              divdata.appendChild(div);
+            })
+        });
+    </script>
+</body>
+</html>

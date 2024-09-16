@@ -1,0 +1,51 @@
+// {
+//     "products": [
+//       {
+//         "name": "Product 1",
+//         "description": "Description of Product 1",
+//         "image_url": "sample1.jpg",
+//         "price": 29.99,
+//         "stock": 100,
+//         "category": "Electronics"
+//       },
+//       {
+//         "name": "Product 2",
+//         "description": "Description of Product 2",
+//         "image_url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAGgAlAMBIgACEQEDEQH/xAAaAAACAwEBAAAAAAAAAAAAAAADBAACBQEG/9oACAEBAAAAAMWxdF+4rUFWEOeTk8nCP6XAwg6VsdqSTynLu6lwCTXKdpksknleWc1TIWTlGuvFk5PI9u1rHUHK0rfQNJJ4vpHNQqF+NIxTbZ7JPFQjmkRUpVZVVjZtJPGSzmjOaBM9lECetoWk8b2zrZBsE6otYE37dnj7X1RsVOemd0AO7h+zyV3j3oXpwrCXDfXe7PK7Nst+NwAxrvUjhezzm2DL09KwV1o/KU7Yk//EABcBAQEBAQAAAAAAAAAAAAAAAAEAAgP/2gAKAgIQAxAAAAARrKgzFVvI1z6ayTRVbCHG4RoqtlZcblzrNFW8zjWdIms1lrecbJsus7yI0I6yOXphKEv/xAAvEAACAgEDAgUCBQUBAAAAAAABAgARAxIhMQRBEyAiUWEQcRQjMlKBMDNCkcHR/9oACAEBAAE/AIIswGJHbShMXKG+DDDD9VYLuZhyeJq2qj5iPos6cxJ1AJxGvcTRaxHN6G5hh+hYA13gUkWZ0opD8sfMfoswHeJMn9tvtcBHtMqsaKjeM+dFb82gOI2XqLKnKYnjsW/MujVTGrhqIr3MY0N9piFKB5j9FmE7xIRake4iatRGo6RHI0nfaZk8VGAFlaNQ0zpp4fSf9xKt8nCO9LEav+/EctYHYxPNqlxTMR3mM7QtSkxQQPmZyihQ2QA8+5mJQ2VsyMGUpTfcRMSBRR2ANExkWsDaguLGNyYjYnZtOVd/4hY0PcG4h81y4pmI7iYm2mR6SZM73oTbuW5qZAEDla9YWmbix2Mw5RhfAuoMeHI4jgduJkzA5wu+hE2IFgGYsQVF17qCSWqr+BBkdWqyVvaYDaL9v6CneYzMRmWykoohd2rUeVmB8gagDOoXxEBIHoPaB8jY+DOlLDXmE6h82TvdwhaohlNzpOo0nQ0VrHnWY5i2Ecl+9VvE0H1U3/kxm19/vzMSqDwK9t5nxYlzjGjaUyXqEyLiCBVACgbCo5UD2/io6JQ0mieAYyEbjkTo8+taMvzATCtwngQrWfuARzBeNzuf+mIHH+RgzbkOLhzdP+zf7TJnu9AoRXbVY3PzxH0777y+VM6d9OUQHbyiItkCY00pBbWdqEyHWiODuIynTrJszE4YCaVMfQoMdSzKRFVVUloxO7XxL3sS6axMD6kHlVSTtMeHwqbIKB7zKCpUq9qZg0jWD3ExP4blH4M1aRofjsZoTsYLCjfaZCoBJa54gBb9wjOWYkmgxmXJdL2EB+nSH0eQCzOnxqiAhQT7zK4Kuh9omQ+j4aEVvvvwYhuxo1k8VPw7ugV3FT8LjxrssZct/qGn5j0gJ3bcWeI+JSt4yVIjYnyPjC8t29oOgw73qMbocdekkROjCj1G4ihBQgMuXMKl8iqO5hIDMo/Sq7CPg1rq1EHtMismVrExKrrjOpip7RVVRQEG42mXJvQjvM3qx7UT3mIO2wNmJiTFzu01+qO2wMZ7FVA0Vpcuf//EAB0RAQACAgIDAAAAAAAAAAAAAAEAEAIRAzASIEH/2gAIAQIBAT8AvfUsGPRrrBZ992hm4RvJMYO68ZqFN8kwhMoQtr//xAAeEQEAAgEEAwAAAAAAAAAAAAABABARAiAwMRIhQf/aAAgBAwEBPwC040hHevqdk+9cOQ4CsUwsMxMV5TMaL0TXWmMdv//Z",
+//         "price": 39.99,
+//         "stock": 50,
+//         "category": "Clothing"
+//       },
+//       {
+//         "name": "Product 3",
+//         "description": "Description of Product 3",
+//         "image_url": "https://example.com/product3.jpg",
+//         "price": 49.99,
+//         "stock": 20,
+//         "category": "Home & Kitchen"
+//       },
+//       {
+//         "name": "Product 4",
+//         "description": "Description of Product 4",
+//         "image_url": "https://example.com/product4.jpg",
+//         "price": 19.99,
+//         "stock": 200,
+//         "category": "Sports & Outdoors"
+//       }
+//     ]
+//   }
+
+
+{"products":[
+  {
+   "Name":"Product1",
+   "url":"okay"
+  },
+  {
+
+  },
+  {
+
+  }
+]}
+  

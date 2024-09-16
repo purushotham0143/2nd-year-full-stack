@@ -1,0 +1,17 @@
+[
+    {
+      "title": "T-Shirt",
+      "category": "cloths",
+      "price": 200
+    },
+    {
+      "title": "Jeans",
+      "category": "cloths",
+      "price": 400
+    },
+    {
+      "title": "Hoodie",
+      "category": "cloths",
+      "price": 500
+    }
+  ]

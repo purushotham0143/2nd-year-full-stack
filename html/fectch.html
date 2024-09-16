@@ -1,0 +1,534 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   async function abc(){
+      let abc = await fetch("https://jsonplaceholder.typicode.com/posts");
+      let data = await abc.json();
+      data.forEach(ele=>{
+        // console.log(ele.body);
+        ele.body = ele.body.toUpperCase();
+        console.log(ele.body);
+      })
+    }
+    abc();
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async_table3</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>maidenName</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>username</th>
+            <th>password</th>
+            <th>birthDate</th>
+            <th>image</th>
+            <th>bloodGroup</th>
+            <th>height</th>
+            <th>weight</th>
+            <th>eyeColor</th>
+            <th>company</th>
+            <th>domain</th>
+            <th>ip</th>
+            <th>hair</th>
+            <th>macAddress</th>
+            <th>university</th>
+            <th>bank</th>
+            <th>Address</th>
+            <th>ein</th>
+            <th>ssn</th>
+            <th>userAgent</th>
+            
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+<script>
+  async function getdata(){
+
+var response = await fetch('https://dummyjson.com/users');
+var data = await response.json();
+
+console.log(data);
+
+var data1 = data.users;
+console.log(data1);
+
+myfunction(data1);
+
+}
+
+function myfunction(data1){
+data1.forEach(element => {
+
+    var tr=document.createElement("tr");
+
+    for(var key in element){
+        var td=document.createElement("td");
+        td.innerText=element[key];
+
+        tr.appendChild(td);
+    }
+
+    document.querySelector('table tbody').append(tr);
+    
+});
+}
+
+getdata();
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </style>
+</head>
+<body>
+  <script>
+    async function data(){
+    let var1= await fetch('https://dummyjson.com/users');
+    let var2= await var1.json();
+    // document.write(JSON.stringify(var2));
+    let var3=var2.users;
+    // document.write(JSON.stringify(var3));
+    let table=document.createElement('table');
+    table.setAttribute('border','1');
+    for(const key in var3[0]){
+        let th=document.createElement('th');
+         th.innerHTML=key;
+         table.appendChild(th);
+    }
+    var3.forEach((ele)=>{
+        let tr=document.createElement('tr');
+        for(const key in ele){
+         let td=document.createElement('td');
+        if(typeof(ele[key])=='object')
+        td.innerHTML=JSON.stringify(ele[key]);
+    else
+    td.innerHTML=ele[key];
+   tr.appendChild(td);
+        }
+      table.appendChild(tr);
+    })
+    document.body.appendChild(table);
+    }
+    data();
+  </script>
+</script>
+</html> -->
+
+
+
+
+<!-- fetch type questions 3 types *********************************-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+<table border="1">
+   <thead>
+      <tr>
+         <th>ID</th>
+         <th>movie</th>
+         <th>image</th>
+         <th>image_url</th>
+         <th>rating</th>
+      </tr>
+   </thead>
+   <tbody>
+
+   </tbody>
+</table>
+</body>
+   <script>
+    let array=[];
+      async function fetchdata(){
+       let data= await fetch('https://dummyapi.online/api/movies');
+       let response= await data.json();
+       console.log(response);
+       response.forEach((obj)=>{
+       array.push(obj);
+        loadata(obj);
+       })
+      }
+      function loadata(obj){
+     let tr=document.createElement('tr');
+     for(const key in obj){
+     let td=document.createElement('td');
+      td.innerHTML=obj[key];
+      tr.appendChild(td);
+     }
+     document.querySelector('table tbody').append(tr);
+     
+      }
+      fetchdata();
+   </script>
+</html> -->
+
+
+
+ 
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </style>
+</head>
+<body>
+  <script>
+    let array=[];
+    async function data(){
+    let var1= await fetch('https://dummyjson.com/users');
+    let var2= await var1.json();
+    console.log(var2)
+    let var3=var2.users;
+   let table=document.createElement('table');
+   table.setAttribute('border','1');
+   for(const key in var3[0]){
+    let tr=document.createElement('tr');
+    let th=document.createElement('th');
+    th.innerHTML=key;
+    tr.appendChild(th);
+    table.appendChild(th);
+   }
+  var3.forEach((obj)=>{
+     array.push(obj);
+    Dum(obj,table);
+   })
+   document.body.appendChild(table);
+    }
+    function Dum(obj,table){
+        // console.log(obj);
+        let tr=document.createElement('tr');
+        for(const key in obj){
+            let td=document.createElement('td');
+            if(typeof(obj[key])=='object')
+            td.innerHTML=JSON.stringify(obj[key]);
+          else
+            td.innerHTML=obj[key];
+            tr.appendChild(td);
+        }
+        table.append(tr);
+    }
+    data();
+  </script>
+</script>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #submit{
+        margin-left: 50px;
+        }
+    </style>
+</head>
+<form>
+    <h1>Hostel Out pass</h1>
+    Name:<input type="text"  id="name"><br/><br/>
+    IDNo:<input type="text" id="id"><br/><br/>
+    Phno:<input type="text" id="no"><br/><br/>
+    <button id="submit">submit</button>
+  </form>
+</body><br/>
+<table border="1">
+    <thead>
+       <tr>
+          <th>Name</th>
+          <th>Idno</th>
+          <th>Phno</th>
+       </tr>
+    </thead>
+    <tbody>
+ 
+    </tbody>
+ </table>
+ </body>
+<body>
+<script>
+    let array=[];
+ let burtton=document.getElementById('submit').addEventListener('click',gatepass);
+function gatepass(e){
+    e.preventDefault();
+    let obj={};
+  obj.var1=document.getElementById('name').value;
+  obj.var2=document.getElementById('id').value;
+  obj.var3=document.getElementById('no').value;
+  array.push(obj);
+  localStorage.setItem('key',JSON.stringify(array));
+  table(obj);
+}
+function table(obj){
+    let tr=document.createElement('tr');
+    for(const key in obj){
+        let td=document.createElement('td');
+        td.innerHTML=obj[key];
+        tr.appendChild(td);
+    }
+    document.querySelector('table tbody').append(tr);
+}
+window.addEventListener('load',loaded);
+         function loaded(){
+          let data = JSON.parse(localStorage.getItem('key'));
+          data.forEach((ele) => {table(ele);} );
+         }
+
+</script>
+</html> -->
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form>
+    <h1>Hostel Out pass</h1>
+    Name:<input type="text" id="name"><br/><br/>
+    IDNo:<input type="text" id="id"><br/><br/>
+    Phno:<input type="text" id="no"><br/><br/>
+    <button id="submit">submit</button>
+  </form>
+ 
+ </body>
+  <script>
+    let array = [];
+
+    document.getElementById('submit').addEventListener('click', gatepass);
+
+    function gatepass(e) {
+      e.preventDefault();
+      let obj = {};
+      obj.var1 = document.getElementById('name').value;
+      obj.var2 = document.getElementById('id').value;
+      obj.var3 = document.getElementById('no').value;
+      array.push(obj);
+      localStorage.setItem('key', JSON.stringify(array));
+      let table=document.createElement('table');
+   table.setAttribute('border','1');
+   let thead = document.createElement('thead');
+      let tr = document.createElement('tr');
+      ['ID', 'Mail', 'No'].forEach((ele) => {
+        let th = document.createElement('th');
+        th.innerHTML = ele;
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+      table.appendChild(thead);
+      something(obj,table);
+    }
+    function something(obj,table) {
+      let tr = document.createElement('tr');
+      for (const key in obj) {
+        let td = document.createElement('td');
+        td.innerHTML = obj[key];
+        tr.appendChild(td);
+      }
+    document.querySelector('table').appendChild(tr);
+    }
+    window.addEventListener('load',get);
+    function get(){
+        let data=JSON.parse(localStorage.getItem('key'));
+        data.forEach((ele)=>{something(ele);})
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h1>Hostel Out pass</h1>
+        Name:<input type="text" id="name"><br/><br/>
+        IDNo:<input type="text" id="id"><br/><br/>
+        Phno:<input type="text" id="no"><br/><br/>
+        <button type="button" id="submit">Submit</button>
+    </form>
+
+    <script>
+        let array = [];
+        let table = document.createElement('table');
+        table.setAttribute('border', '1');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+
+        // Create table header
+        let tr = document.createElement('tr');
+        ['ID', 'Name', 'Phno'].forEach((ele) => {
+            let th = document.createElement('th');
+            th.innerHTML = ele;
+            tr.appendChild(th);
+        });
+        thead.appendChild(tr);
+        table.appendChild(thead);
+
+        document.body.appendChild(table);
+
+        document.getElementById('submit').addEventListener('click', gatepass);
+
+        function gatepass() {
+            let obj = {
+                var1: document.getElementById('name').value,
+                var2: document.getElementById('id').value,
+                var3: document.getElementById('no').value,
+            };
+            array.push(obj);
+            localStorage.setItem('key', JSON.stringify(array));
+            something(obj);
+        }
+
+        function something(obj) {
+            let tr = document.createElement('tr');
+            for (const key in obj) {
+                let td = document.createElement('td');
+                td.innerHTML = obj[key];
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+            table.appendChild(tbody);
+        }
+
+        window.addEventListener('load', get);
+
+        function get() {
+            let data = JSON.parse(localStorage.getItem('key')) || [];
+            data.forEach((ele) => {
+                something(ele);
+            });
+        }
+    </script>
+</body>
+</html> -->
+

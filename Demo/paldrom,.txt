@@ -1,0 +1,5 @@
+paldrom,
+sum of the digits of the number
+factroial in the form of the string
+prime numbers between two numbers//two arguments
+leeap year

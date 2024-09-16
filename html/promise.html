@@ -1,0 +1,231 @@
+<!-- manam emina Promise ani function vadi rasti adi check chistundi Inka emina
+unnaya ani check chistundi  vunti avi mundhu avi avuthaye twaravta promise avuthundi -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+   <!-- <script>
+    var mypromise=new Promise(function(resolve,reject){
+        var input=prompt('ente a number');
+        if(input>19){
+        resolve('sucess')}
+    else{
+    reject('reject');}
+    });
+    mypromise.then(foreresolve,forreject) // mypromise.then(foreresolve)catch.(forreject) 
+    function foreresolve(value){
+   console.log(value)
+    }
+    function forreject(error){
+        console.log(error)
+    }
+   </script> -->
+   <!-- <script>
+    fetch('https://dummyjson.com/posts')
+    .then(res=>res.text())
+    .then(data=>console.log(data))
+   </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Promise</h2>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+let myPromise = new Promise((myResolve, myReject)=> {
+  let x = prompt('enter a number');
+
+// some code (try to change x to 5)
+
+  if (x == 0) {
+    myResolve("Okkkkkkk");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  (value)=> {myDisplayer(value);},
+  (error)=> {myDisplayer(error);}
+);
+</script>
+
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function makeRequest(location){
+      return new Promise((resolve,reject)=>{
+        console.log(`make a request to ${location}`);
+      })
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+    //  async function getdata(){
+    //  var respoonse=fetch('https://dummyjson.com/posts');
+    //  console.log(respoonse)
+    //  }
+    //  getdata();
+    //  async function getdata(){
+    //  var response= await fetch('https://dummyjson.com/posts');
+    //  var data= await response.json();
+    //  console.log(data)
+    //  }
+    //  getdata();
+    // async function getdata(){
+    //   try{//if error uccers in this then this code
+    //  var response= await fetch('https://dummyjson.com/posts');
+    //  var data= await response.json();
+    //  console.log(data)
+    //  }
+    //  catch(error){
+    //   console.error(error);
+    //  }
+    // }
+    //  getdata();
+   </script>
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let p= new Promise(
+      
+      function(success,error){
+      let data=true;
+      if(data){
+        success('promise is done')
+      }
+      else
+      error('promise is not done')
+      }
+    )
+    console.log(p)
+    p.then(function(data){
+console.log(data)
+    })
+    p.catch(function(errordata){
+      console.log(errordata)
+    })
+    
+  </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Define the URL to fetch data from
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+// Make a GET request to fetch the data
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+      console.log('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Manipulate the titles to uppercase
+    const modifiedData = data.map(post => ({
+      title: post.title.toUpperCase()
+    }));
+
+    // Log the modified data to the console
+    console.log(modifiedData);
+  })
+
+    //  let p=fetch('https://jsonplaceholder.typicode.com/posts');
+    //  p.then((resolve)=>{
+    //   resolve.json().then(title=>{
+    //     console.log(title);
+    //     title.filter(title => {
+    //       console.log(title);
+    //     })
+    //   })
+    //  })
+     
+  </script>
+  
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   async function abc(){
+      let abc = await fetch("https://jsonplaceholder.typicode.com/posts");
+      let data = await abc.json();
+      data.forEach(ele=>{
+        // console.log(ele.body);
+        ele.body = ele.body.toUpperCase();
+        console.log(ele.body);
+      })
+    }
+    abc();
+  </script>
+</body>
+</html> -->

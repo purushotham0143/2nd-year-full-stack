@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Name:</label> <input type="text" name="name" id="name" placeholder="name"><br>
+    <label for="name">Email:</label> <input type="text" name="name" id="email" placeholder="email">
+    <button id="demo">submit</button>
+    <script>
+        let array=[];
+     let obj={};
+     document.querySelector('#demo').addEventListener('click',localstorage);
+     function localstorage(){
+        let var1=document.querySelector('#name').value 
+        let var2=document.querySelector('#email').value
+        obj.name=var1;
+         obj.email=var2;
+    localStorage.setItem('key',JSON.stringify(obj))
+     let x = JSON.parse(localStorage.getItem('key'));
+console.log(x);
+     }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Name:</label> <input type="text" name="name" id="name" placeholder="name"><br>
+    <label for="name">Email:</label> <input type="text" name="name" id="email" placeholder="email">
+    <button id="demo">submit</button>
+    <script>
+        let obj={};
+        let array=[];
+        document.getElementById('demo').addEventListener('click',localstorage);
+        function localstorage(){
+           let var1=document.getElementById('name').value;
+           let var2=document.getElementById('email').value;
+           obj.name=var1;
+           obj.email=var2;
+           localStorage.setItem('key',JSON.stringify(obj));
+           let x=JSON.parse(localStorage.getItem('key'))
+           console.log(x);
+        }
+    </script>
+</body>
+</html>

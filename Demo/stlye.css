@@ -1,0 +1,15 @@
+img{
+    float:right;
+}
+
+.divbox{
+    border:3px solid red;
+    width:50%;
+    height:40vh;
+}
+@media screen and (max-width:600px)
+{
+    .divbox{
+        background-color: brown;
+    }
+}

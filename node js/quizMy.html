@@ -1,0 +1,195 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #h1 {
+        text-align: center;
+    }
+
+    #button {
+        text-align: center;
+    }
+
+    .option {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <h1 id="h1">Welcome TO the Quiz</h1>
+    <div id="que"></div>
+    <div id="mark"></div>
+    <div id="button">
+        <button id="start">Start</button>
+    </div>
+    <div class="option">
+        <input id="op1" class="same option1" name="ame" type="radio" /> <label id="option-1" for="op1"></label> <br />
+        <input id="op2" class="same option2" name="ame" type="radio" /> <label id="option-2" for="op2"></label> <br />
+        <input id="op3" class="same option3" name="ame" type="radio" /> <label id="option-3" for="op3"></label> <br>
+        <button class="next">Next-></button>
+    </div>
+
+    <script>
+        let a = [
+            {
+                question: "1.What is 2+3 ?",
+                Options: [1, 5, 3],
+                correctAns: "op2"
+            },
+            {
+                question: "2.Full form of html?",
+                Options: ["Hyper text Markup Language", "Hypere text", "text language"],
+                correctAns: "op1"
+            },
+            {
+                question: "3.Full form of os?",
+                Options: ["operating system", "operating", "stystem operating"],
+                correctAns: "op1"
+            }
+        ]
+        let i = 0;
+        let marks = 0;
+        document.getElementById('start').addEventListener('click', Dowork);
+        document.querySelector('.next').addEventListener('click', GoNext);
+
+        function Dowork() {
+            document.getElementById('start').style.display = "none";
+            document.querySelector('#que').innerHTML = a[i].question;
+            document.querySelector('.option').style.display = "block";
+            document.querySelector('#option-1').innerHTML = a[i].Options[0];
+            document.querySelector('#option-2').innerHTML = a[i].Options[1];
+            document.querySelector('#option-3').innerHTML = a[i].Options[2];
+        }
+
+        function GoNext() {
+            Marks();
+            i++;
+            if (i < a.length) {
+                document.querySelector('#que').innerHTML = a[i].question;
+                document.querySelector('#option-1').innerHTML = a[i].Options[0];
+                document.querySelector('#option-2').innerHTML = a[i].Options[1];
+                document.querySelector('#option-3').innerHTML = a[i].Options[2];
+                clearRadioButtons();
+            } else {
+                document.querySelector('#que').innerHTML = "Quiz Completed!";
+                document.querySelector('.option').style.display = "none";
+                document.querySelector('.next').style.display = "none";
+                document.querySelector('#mark').innerHTML = "Your marks are " + marks;
+            }
+        }
+
+        function Marks() {
+            let op1 = document.querySelector('#op1').checked;
+            let op2 = document.querySelector('#op2').checked;
+            let op3 = document.querySelector('#op3').checked;
+            let ans;
+            if (op1) ans = "op1";
+            else if (op2) ans = "op2";
+            else if (op3) ans = "op3";
+            else ans = null;
+            if (a[i].correctAns == ans) marks += 1;
+        }
+
+        function clearRadioButtons() {
+            document.querySelector('#op1').checked = false;
+            document.querySelector('#op2').checked = false;
+            document.querySelector('#op3').checked = false;
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #h1 {
+        text-align: center;
+    }
+
+    #button {
+        text-align: center;
+    }
+
+    .option {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <h1 id="h1">Welcome TO the Quiz</h1>
+    <div id="que"></div>
+    <div id="mark"></div>
+    <div id="button">
+        <button id="start">Start</button>
+    </div>
+    <div class="option">
+        <input id="op1" class="same option1" name="ame" type="radio" /> <label id="option-1" for="op1"></label> <br />
+        <input id="op2" class="same option2" name="ame" type="radio" /> <label id="option-2" for="op2"></label> <br />
+        <input id="op3" class="same option3" name="ame" type="radio" /> <label id="option-3" for="op3"></label> <br>
+        <button class="next">Next-></button>
+    </div>
+
+    <script>
+        let a = [
+            {
+                question: "1.What is 2+3 ?",
+                Options: [1, 5, 3],
+                correctAns: "op2"
+            },
+            {
+                question: "2.Full form of html?",
+                Options: ["Hyper text Markup Language", "Hypere text", "text language"],
+                correctAns: "op1"
+            },
+            {
+                question: "3.Full form of os?",
+                Options: ["operating system", "operating", "stystem operating"],
+                correctAns: "op1"
+            }
+        ]
+        let i = 0;
+        let marks = 0;
+        document.getElementById('start').addEventListener('click', Dowork);
+        document.querySelector('.next').addEventListener('click', GoNext);
+
+        function Dowork() {
+            document.getElementById('start').style.display = "none";
+            document.querySelector('#que').innerHTML = a[i].question;
+            document.querySelector('.option').style.display = "block";
+            document.querySelector('#option-1').innerHTML = a[i].Options[0];
+            document.querySelector('#option-2').innerHTML = a[i].Options[1];
+            document.querySelector('#option-3').innerHTML = a[i].Options[2];
+        }
+
+        function GoNext() {
+            Marks();
+            i++;
+        
+        }
+
+        function Marks() {
+         
+        }
+
+    </script>
+</body>
+
+</html>

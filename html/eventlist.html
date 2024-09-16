@@ -1,0 +1,259 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>I am doing Onclick addEventListener in this program</p>
+    <button id="test">Try It</button>
+    <h1 id="demo"></h1>
+    <script>
+     document.getElementById("test").addEventListener('click',change)
+     function change(){
+        let data=document.getElementById('demo').innerHTML= Date();
+     }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>I am doing Onclick addEventListener in this program</p>
+    <button id="test">Try It</button>
+    <h1 id="demo"></h1>
+    <script>
+     document.getElementById("test").addEventListener('click',change)
+     function change(){
+        let data=document.body.style.backgroundColor="blue";
+     }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript addEventListener()</h2>
+
+<p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+<button id="myBtn">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML += "Moused over!<br>";
+}
+
+function mySecondFunction() {
+  document.getElementById("demo").innerHTML += "Clicked!<br>";
+}
+
+function myThirdFunction() {
+  document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Name:<input type="text" id="some">
+    </form><br>
+    <button>click me</button>
+    <script>
+     var fn=document.getElementById("some")
+     fn.addEventListener('focus',change)
+     function change(){
+       console.log(this)//in note book
+        fn.style.backgroundColor="blue";
+     }
+    </script>
+</body>
+</html> -->
+ 
+
+
+
+
+<!-- 
+//keyBoardEvents************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Name:<input type="text" id="some">
+    </form><br>
+    <button>click me</button>
+    <script>
+     var fn=document.getElementById("some")
+     fn.addEventListener('keyup',change)
+     function change(event){
+       console.log(event)//ekkada event ani yandhuku print chisam anti manam,Event imformation kosam
+       if(event.key=='a')
+       alert('Not allowe a')
+        fn.style.backgroundColor="blue";
+     }
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .some{
+         align-items: center;
+         text-align: center;
+         margin-top: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="some">
+    <form>
+        Name:<input type="text" id="some">
+    </form><br>
+    <button id="b1" onclick="change();">click me</button>
+</div>
+    <script>
+     function change(){
+      let letter='0123456789ABCDF';
+      let color='#';
+      for(let i=0;i<6;i++){
+        let r=Math.floor(Math.random()*16);
+        color=color+letter[r];
+      }
+      document.body.style.backgroundColor=color;
+     }
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #timer{
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 190px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: auto;
+        }
+        button{
+            width: 90px;
+            border-radius: 3px;
+        }
+        #time{
+            text-align: center;
+        }
+        #start:hover{
+           background-color: rgb(5, 145, 5);
+           color:aliceblue;
+        }
+        #stop:hover{
+            background-color: red;
+            color:#fff;
+        }
+        #reset:hover{
+             background-color: blue;
+             color:#fff;
+        }
+        #display{
+            text-align: center;
+            border: 1px solid rgb(0, 0, 0);
+            width: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Timer Website</h1>
+    <div id="timer">
+       <div id="display"><label id="time">0</label></div>   
+      <button id="start">start</buttom>
+      <button id="stop">stop</button>
+      <button id="reset">reset</button>
+    </div>
+</body>
+<script>
+    let stop;
+    let i=1;
+    let p = document.querySelector('#time');
+    document.querySelector('#start').addEventListener('click',(e)=>{
+        e.target.setAttribute('disabled','true');
+         stop = setInterval(()=>{
+              p.innerHTML = i;
+              i++;
+        },1000)        
+    })
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(stop);
+
+    })
+    document.querySelector('#reset').addEventListener('click',()=>{
+        i=0
+        p.innerHTML = i;
+    })
+
+</script>
+</html> -->

@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list{
+        border: 1px solid black;
+        height: 500px;
+        width: 300px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="uname" id="uname" placeholder="Write something">
+<input type="button" value="Submit" id="btn"><br><br>
+<ul id="list"></ul>
+<script>
+    let array=[];
+ let valu1=document.getElementById('btn').addEventListener('click',async(e)=>{
+    e.preventDefault();
+        let value1=document.getElementById("uname").value.trim();
+    // console.log(value1);
+    let result= await fetch(`http://localhost:5050/getData?value1=${value1}`);
+    let data=await result.json();
+
+    let li=document.createElement('li');
+    let checkbox=document.createElement('input');
+    checkbox.type="checkbox";
+    checkbox.className="check"
+    let button=document.createElement('input');
+    button.type="button";
+    button.value='delete';
+    button.addEventListener('click', () => {
+        li.remove(); 
+    });
+    let final=data.value1;
+    li.append(final);
+    li.append(checkbox);
+    li.append(button);
+    document.getElementById('list').appendChild(li);
+   let checkboxes= document.getElementsByClassName('check');
+   for(let i=0;i<checkboxes.length;i++){
+    checkboxes[i].addEventListener('click',(e)=>{
+     let checkbox=e.target;
+     let li=checkbox.parentElement;
+        if (checkbox.checked) {
+        li.style.textDecoration = "line-through";
+    } else {
+        li.style.textDecoration = "none";
+    }
+})
+}
+        })
+</script>
+</body>
+</html>
