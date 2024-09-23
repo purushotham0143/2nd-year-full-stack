@@ -19,7 +19,11 @@ exp.get('/',(req,res)=>{
 })
 exp.get('/contact',(req,res)=>{
  res.sendFile('./public/view/contact.html',{root:'./'});
-})
+ })
+
+// exp.get('/contact',(req,res)=>{
+//     res.sendFile(__dirname+"/contact.html");  //this is also another method
+//    })
 
 exp.get('/about',(req,res)=>{
     res.sendFile('./public/view/about.html',{root:'./'});
@@ -33,7 +37,7 @@ exp.get('/about',(req,res)=>{
    exp.get('/multer',(req,res)=>{
     res.sendFile('./multer.html',{root:'./'});
    })
-exp.get('/dynamic/:name/:email', (req, res)=> { // this is  called Dynamic Routing
+exp.get('/dynamic/:name/:email', (req, res)=> {   // this is  called Dynamic Routing
     res.send(req.params);
     console.log(req.params);  // params means paramters if we give like /search/abc will get name=abc
 })
