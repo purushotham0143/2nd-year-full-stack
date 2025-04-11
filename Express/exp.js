@@ -3,7 +3,7 @@
 //express  pproblem is solved by it self 
 //routing is easy
 //how to create route//Used to Routing //used for the midways
-// it will descrease the http code 
+// it will descrease the http code  
 
 const express=require('express');
 const fs=require('fs');

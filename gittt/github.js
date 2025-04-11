@@ -38,6 +38,109 @@
 //git push
 
 
+//THis is from another Youtube channel Tech Jashwanth ans chat Gpt---*********
+// why we write the remote beacuse to access any repo we want Remote  so we create a  remote
+// why we  create different  branches beause to avoid Confussion we use differernt braches if your friend is working in 
+//another  page your working on another page then no confussion and at last we will merge the braches code will be moxed
+//if you not putting tha files intho Staging area your files will not be Tracked tha changes
+
+// git --version          # Check if Git is installed
+// git config --global user.name "Your Name"
+// git config --global user.email "you@example.com"
+
+//Basic Process at first
+// git init
+// git add .
+// git commit -m "Initial commit"
+// git branch -M main
+// git remote add origin https://github.com/user/repo.git
+// git push -u origin main
+
+
+
+//To do some basic commands for gitHub
+//git init            Initialize a new git repository#
+// git add .              # Add all files to staging area
+// git add filename       # Add specific file
+//git commit -m "Your commit message"
+//git remote add origin https://github.com/user/repo.git
+// git push -u origin main          # First push to set upstream
+// git push                         # Push changes
+//git pull origin main             # Pull latest changes from main
+// git branch             # List all branches
+// git branch new-branch  # Create new branch
+// git checkout new-branch  # Switch to new branch
+// git checkout -b feature  # Create and switch in one command
+// git merge branch-name  # Merge a branch into current branch
+
+// git diff               # Show unstaged changes
+// git stash              # Save changes temporarily
+// git stash pop          # Apply last stashed changes
+// git reset --hard       # Undo all local changes
+// git rm filename        # Delete tracked file
+
+// 1. Undo the last commit (but keep your changes)
+// git reset --soft HEAD~1
+
+
+// 2. Undo the last commit (and unstage the changes)
+// git reset --mixed HEAD~1
+
+// 3. Undo last commit (and delete all code changes too)
+// git reset --hard HEAD~1
+
+// 4. Undo specific file from staging
+// git reset HEAD filename
+
+
+// Undo Pushed Commit
+// If you already pushed and want to remove a commit:
+// git revert <commit-hash>
+// This creates a new commit that undoes changes from a previous one.
+
+
+// 🧹 Start Over (Reset Everything)
+
+// git reset --hard origin/main
+// ⚠️ This will reset your repo to the state of the remote branch (main). All local changes will be lost.
+
+
+// Want to Undo a Git Add?
+// git reset HEAD file.txt
+// Unstages a file from git add, but keeps changes in your working directory.
+
+
+// git log             # See history of commits
+// git status          # See what's changed/staged
+// git diff            # See actual code differences
+
+//examples
+// 🧨 You committed by mistake:
+// git commit -m "Oops wrong commit"
+
+// To undo:
+// git reset --soft HEAD~1
+
+// Then fix your code and:
+// git add .
+// git commit -m "Correct commit"
+
+//git clone https://github.com/user/repo.git  #To clone the Reposatory
+//git status             # Show changed files, staged files, etc.
+// git log                # See all commits
+// git log --oneline      # See short commit history
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

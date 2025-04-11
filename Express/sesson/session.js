@@ -19,7 +19,7 @@ app.get('/',(req,res)=>{
 app.post('/data',(req,res)=>{
    
      let isuser=data1.find((ele)=>{
-        if(req.body.name==ele.name && req.body.p==ele.p){
+        if(req.body.name==ele.name && req.body.p==ele.p){   
             return 1;
         }
      })

@@ -22,7 +22,7 @@ const app = express();
 // app.use(express.static('./'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors());
 const htmlroutes = require('./htmlroutes');
 app.use('/', htmlroutes);
 
@@ -32,4 +32,4 @@ app.listen(4040, () => {
     console.log(`Server started on port 4040`);
 }).on('error', (err) => {
     console.error('Failed to start server:', err);
-});
+});  

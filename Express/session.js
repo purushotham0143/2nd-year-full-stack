@@ -1,8 +1,10 @@
 //http is a state less it is not manage the data;
 // This is staorage
 //1.cookies:it will go automitaclly,this two will store data in the Clint side
+//cookies use Expire period example data and time 
 //2.local Storage;it not going automitacly append go  to server,we have to send the req manully
 //3.session: it is stored in server,this i an object,it is closed after the one request is completed
+// Session uses Timeout
 
 
 // const express = require('express');
